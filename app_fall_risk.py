@@ -601,9 +601,9 @@ kpi1, kpi2, kpi3 = st.columns(3)
 kpi1.metric("총 환자 수", len(filtered_df))
 
 if "fall_event" in filtered_df.columns:
-    kpi2.metric("낙상 발생 수", int(filtered_df["fall_event"].sum()))
+    kpi2.metric("낙상과거력 환자수", int(filtered_df["fall_event"].sum()))
 else:
-    kpi2.metric("낙상 발생 수", "-")
+    kpi2.metric("낙상과거력 환자수", "-")
 
 # 👉 AI 기준 High Risk 수 (model_risk_group 기준)
 kpi3.metric("High Risk 환자 수", int((filtered_df["model_risk_group"] == "High").sum()))
